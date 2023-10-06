@@ -2,8 +2,8 @@ from flask import Flask,make_response, jsonify, request, render_template
 from myapp import db, app
 from flask_restful import Resource, Api
 from myapp.models import User, TouristAttractionSite, Review
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 # app = Flask(
 #     __name__,
