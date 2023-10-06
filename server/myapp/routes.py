@@ -1,4 +1,4 @@
-from flask import Flask,make_response, jsonify, request, render_template
+from flask import make_response, jsonify, request, render_template
 from myapp import db, app
 from flask_restful import Resource, Api
 from myapp.models import User, TouristAttractionSite, Review
