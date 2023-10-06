@@ -5,30 +5,24 @@ from myapp.models import User, TouristAttractionSite, Review
 from dotenv import load_dotenv
 load_dotenv()
 
-# app = Flask(
-#     __name__,
-#     static_url_path='',
-#     static_folder = '../client/build',
-#     template_folder='../client/build'
-# )
 
 api = Api(app)
 
-# @app.route('/')
-# @app.route('/<int:id>')
-# def home(id=0):
-#     return render_template("index.html")
-class Home(Resource):
-    def get(self):
-        resp_dict = {
-            "Home": "Welcome to Tour guide"
-        }
-        resp = make_response(
-            jsonify(resp_dict),
-            200,
-        )
-        return resp
-api.add_resource(Home, '/')
+@app.route('/')
+@app.route('/<int:id>')
+def home(id=0):
+    return render_template("index.html")
+# class Home(Resource):
+#     def get(self):
+#         resp_dict = {
+#             "Home": "Welcome to Tour guide"
+#         }
+#         resp = make_response(
+#             jsonify(resp_dict),
+#             200,
+#         )
+#         return resp
+# api.add_resource(Home, '/')
 
 class GetUsers(Resource):
     def get(self):
