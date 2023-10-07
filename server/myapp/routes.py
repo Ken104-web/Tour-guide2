@@ -1,4 +1,4 @@
-from flask import make_response, jsonify, request, render_template
+from flask import make_response, jsonify, request
 from myapp import db, app
 from flask_restful import Resource, Api
 from myapp.models import User, TouristAttractionSite, Review
@@ -8,10 +8,8 @@ load_dotenv()
 
 api = Api(app)
 
-@app.route('/')
-@app.route('/<int:id>')
-def home(id=0):
-    return render_template("index.html")
+
+
 # class Home(Resource):
 #     def get(self):
 #         resp_dict = {
