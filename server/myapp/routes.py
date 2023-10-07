@@ -10,7 +10,7 @@ api = Api(app)
 
 @app.route('/')
 @app.route('/<int:id>')
-def home(id=0):
+def index(id=0):
     return render_template("index.html")
 
 # class Home(Resource):

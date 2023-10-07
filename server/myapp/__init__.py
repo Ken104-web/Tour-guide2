@@ -1,14 +1,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
-# app = Flask(__name__)
+# from flask_cors import CORS
+app = Flask(__name__)
 app = Flask(
     __name__,
     static_url_path='',
-    static_folder = '../client/dist',
-    template_folder='../client/dist'
+    static_folder = '../../client/dist',
+    template_folder='../../client/dist'
 )
+
+# CORS(app)
 # app = Flask(__name__, template_folder='templates')
 
 
