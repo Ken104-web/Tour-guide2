@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -12,10 +12,7 @@ app = Flask(
 # app = Flask(__name__, template_folder='templates')
 
 
-@app.route('/')
-@app.route('/<int:id>')
-def home(id=0):
-    return render_template("index.html")
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tour.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
