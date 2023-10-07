@@ -132,6 +132,30 @@ button:focus-visible {
 
  }
 
+ table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+}
+
+th {
+  background-color: #7ac94c;
+  font-size: 150%;
+}
+
+tr:nth-child(even) {
+  background-color: #8da0f3;
+}
+
+tr:hover {
+  background-color: #ccc;
+}
+
+
 
 
 

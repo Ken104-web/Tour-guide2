@@ -1,3 +1,5 @@
+// import image2 from "./image.jpg"
+// import image3 from "./beach.jpeg"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -34,12 +36,27 @@ return (
             </select>
             </span>
             
-                <h1>Popular sites</h1>
+            <table>
+  <thead>
+    <tr>
+      <th>Popular Sites</th>
+    </tr>
+  </thead>
+  <tbody>
+    {sites.map((site) => (
+      <tr key={site.id}>
+        <td><a href={`/specificsite/${site.id}`}>{site.location}</a></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+                {/* <h1>Popular sites</h1>
             {sites.map((site) => (
-          <p key={site.id}>
+          <p key={site.id} id="image">
             <Link to={`specificsite/${site.id}`}>{site.location}</Link>
           </p>
-            ))}
+            ))} */}
             
 
         </div>

@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-# from flask_cors import CORS
+from flask_cors import CORS
 app = Flask(__name__)
 app = Flask(
     __name__,
@@ -10,7 +10,7 @@ app = Flask(
     template_folder='../../client/dist'
 )
 
-# CORS(app)
+CORS(app)
 # app = Flask(__name__, template_folder='templates')
 
 
