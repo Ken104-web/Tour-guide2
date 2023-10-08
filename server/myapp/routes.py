@@ -95,10 +95,24 @@ class GetEachReview(Resource):
             return resp
         else:
             raise ValueError('User not found')
-class PostEachReview(Resource):
-    def post(self):
-        data = request.get_json()
+api.add_resource(GetEachReview, "/reviews/<int:id>")
 
+# class PostEachReview(Resource):
+#     def post(self):
+#         data = request.get_json()
+
+#         new_rating= Review(
+#             user_id=data["id"],
+#             rating=data['rating'],
+#         )
+#         db.session.add(new_rating)
+#         db.session.commit()
+#         return make_response(new_rating.to_dict(), 201)
+
+
+@app.route("/reviews", methods=["POST"])
+def post():
+        data = request.get_json()
         new_rating= Review(
             user_id=data["id"],
             rating=data['rating'],
@@ -106,8 +120,6 @@ class PostEachReview(Resource):
         db.session.add(new_rating)
         db.session.commit()
         return make_response(new_rating.to_dict(), 201)
-
-api.add_resource(GetEachReview, "/reviews/<int:id>")
 
 
 
