@@ -3,9 +3,16 @@ import  { useState  } from "react";
 function CommentSection(){
     const [newcomments, setNewComments] = useState("");
 
-    const handleCommentSubmit = () => {
-        
+    const handleCommentSubmit = ({newId}) => {
         setNewComments("");
+        fetch("/api/reviews", {
+          method: "POST",
+          headers:{
+            'Content-Type':"application/json"
+          },
+          body:JSON.stringify(newId)
+        })
+        .then(resp => resp.json())
     };
     return (
         <div id="comment">
