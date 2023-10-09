@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 # from flask_cors import CORS
+import os
 app = Flask(__name__)
 app = Flask(
     __name__,
@@ -16,7 +17,7 @@ app = Flask(
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tour_db_gt03_user:iAAL9QBpl0DlpEs8etGJwrnWcR7yL69Q@dpg-ckg307eafg7c73dhigq0-a.oregon-postgres.render.com/tour_db_gt03'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
