@@ -22,7 +22,7 @@ function Site(){
         }
 
         return(
-            <div >
+            <div>
                 <h2>Site Details</h2>
                 
                     {/* {sites.map((review) => (
