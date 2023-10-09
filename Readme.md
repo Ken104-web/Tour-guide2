@@ -56,7 +56,10 @@ Depending on your preference, you can  check your progress by:
 
 # installation 
 
-you can clone using[`git@github.com:Ken104-web/Tour-guide2.git`]
+you can clone using 
+```sh
+git@github.com:Ken104-web/Tour-guide2.git
+```
 
 # Coder
 
