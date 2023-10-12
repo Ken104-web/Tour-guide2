@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
 import {  Link, useParams } from "react-router-dom"
 
-
 function Site(){
         const [ sites, setSites] = useState({})
         const { id } = useParams();
         const [visitorCount, setVisitorCount] = useState(0);
 
         useEffect(() => {
-            fetch(`sites/${id}`)
+            fetch(`/sites/${id}`)
             .then(resp => resp.json())
             .then(data => {
                 // console.log(data);
-                setSites(data)
+                setSites(data);
             })
         }, [id]);
-        console.log(sites);
+        // console.log(sites);
 
         const countNoOfVisitors = () => {
             setVisitorCount((lastCount) => lastCount + 1);

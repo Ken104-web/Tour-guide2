@@ -31,7 +31,7 @@ return (
           {sites.map((site) => (
             <option key={site.id} value={site.id}>
               {site.location}
-              <Link to={`specificsite/${site.id}`}>{site.location}</Link>
+              <Link to={`${site.id}`}>{site.location}</Link>
             </option>
           ))}
             </select>
@@ -46,7 +46,7 @@ return (
   <tbody>
     {sites.map((site) => (
       <tr key={site.id}>
-        <td><a href={`/specificsite/${site.id}`}>{site.location}</a></td>
+        <td><a href={`/${site.id}`}>{site.location}</a></td>
       </tr>
     ))}
   </tbody>
