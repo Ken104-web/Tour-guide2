@@ -10,11 +10,9 @@ function Site(){
             fetch(`/sites/${id}`)
             .then(resp => resp.json())
             .then(data => {
-                // console.log(data);
                 setSites(data);
             })
         }, [id]);
-        // console.log(sites);
 
         const countNoOfVisitors = () => {
             setVisitorCount((lastCount) => lastCount + 1);
