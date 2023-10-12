@@ -8,7 +8,7 @@ function ShowReviews() {
     const { id } = useParams();
  
     useEffect(() => {
-        fetch( `/api/reviews/${id}`)
+        fetch( `/reviews/${id}`)
         .then(resp => resp.json())
         .then(data => setReview(data))
     }, [id])

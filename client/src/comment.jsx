@@ -5,7 +5,7 @@ function CommentSection(){
 
     const handleCommentSubmit = ({newId}) => {
         setNewComments("");
-        fetch("/api/reviews", {
+        fetch("/reviews", {
           method: "POST",
           headers:{
             'Content-Type':"application/json"

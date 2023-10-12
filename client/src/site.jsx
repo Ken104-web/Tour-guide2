@@ -8,7 +8,7 @@ function Site(){
         const [visitorCount, setVisitorCount] = useState(0);
 
         useEffect(() => {
-            fetch(`/api/sites/${id}`)
+            fetch(`sites/${id}`)
             .then(resp => resp.json())
             .then(data => {
                 // console.log(data);

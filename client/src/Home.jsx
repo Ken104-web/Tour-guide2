@@ -1,5 +1,4 @@
-// import image2 from "./image.jpg"
-// import image3 from "./beach.jpeg"
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,9 +8,11 @@ const [sites, setSites] = useState([]);
 const [selectedSite, setSelectedSite] = useState(null);
 
 useEffect(() => {
-    fetch('api/sites')
+    fetch('/sites')
     .then((r) => r.json())
-    .then(data => setSites(data));
+    .then(data => 
+      // console.log(data));
+      setSites(data));
 }, [])
 
 const handleSiteChange = (e) => {
@@ -50,15 +51,6 @@ return (
     ))}
   </tbody>
 </table>
-
-                {/* <h1>Popular sites</h1>
-            {sites.map((site) => (
-          <p key={site.id} id="image">
-            <Link to={`specificsite/${site.id}`}>{site.location}</Link>
-          </p>
-            ))} */}
-            
-
         </div>
     )
 }
